@@ -1,5 +1,6 @@
-import { BodyCopy } from '@/components/UI/typography/BodyCopy'
 import Image from 'next/image'
+
+import { BodyCopy } from '@/components/UI/typography/BodyCopy'
 
 export const TimeBasedParametersTipTwo = () => {
   return (
