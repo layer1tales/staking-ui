@@ -17,7 +17,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   colorized?: boolean
   header?: string
   description?: string
-  content?: React.ReactNode
+  content?: string
   icon?: InfoIcon
 }
 export const Info: React.FC<Props> = ({

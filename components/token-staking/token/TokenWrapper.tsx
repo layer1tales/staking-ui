@@ -2,8 +2,10 @@ import classNames from 'classnames'
 import type { AllowedTokenData } from 'hooks/useAllowedTokenDatas'
 import { useStakePoolMetadataCtx } from 'providers/StakePoolMetadataProvider'
 
+type TokenDataType = unknown
+
 export interface TokenWrapperProps {
-  select: (tokenData: any) => void
+  select: (tokenData: TokenDataType) => void
   selected: boolean
   children: React.ReactNode
   token: AllowedTokenData
