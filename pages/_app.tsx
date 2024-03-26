@@ -1,9 +1,9 @@
-import './styles.css'
 import '@cardinal/namespaces-components/dist/esm/styles.css'
 import 'tailwindcss/tailwind.css'
+import './styles.css'
 
 import { WalletIdentityProvider } from '@cardinal/namespaces-components'
-import type { WalletError } from '@solana/wallet-adapter-base';
+import type { WalletError } from '@solana/wallet-adapter-base'
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
 import { WalletProvider } from '@solana/wallet-adapter-react'
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
@@ -54,16 +54,20 @@ const App = ({
     }
   }, [cluster])
 
-  const wallets = useMemo(() => [], []);
+  const wallets = useMemo(() => [], [])
   const onError = useCallback((error: WalletError) => {
-    console.error(error);
-  }, []);
+    console.error(error)
+  }, [])
   return (
     <EnvironmentProvider defaultCluster={cluster}>
       <QueryClientProvider client={queryClient}>
         <StakePoolMetadataProvider hostname={hostname}>
           <UTCNowProvider>
-          <WalletProvider wallets={wallets} onError={onError} autoConnect={false}>
+            <WalletProvider
+              wallets={wallets}
+              onError={onError}
+              autoConnect={false}
+            >
               <WalletIdentityProvider>
                 <WalletModalProvider>
                   <ModalProvider>
