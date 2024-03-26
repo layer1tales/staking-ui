@@ -4,7 +4,6 @@ import './styles.css'
 
 import { WalletIdentityProvider } from '@cardinal/namespaces-components'
 import type { WalletError } from '@solana/wallet-adapter-base'
-import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
 import { WalletProvider } from '@solana/wallet-adapter-react'
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
@@ -41,19 +40,6 @@ const App = ({
   cluster: string
   hostname: string
 }) => {
-  const network = useMemo(() => {
-    switch (cluster) {
-      case 'mainnet':
-        return WalletAdapterNetwork.Mainnet
-      case 'devnet':
-        return WalletAdapterNetwork.Devnet
-      case 'testnet':
-        return WalletAdapterNetwork.Testnet
-      default:
-        return WalletAdapterNetwork.Mainnet
-    }
-  }, [cluster])
-
   const wallets = useMemo(() => [], [])
   const onError = useCallback((error: WalletError) => {
     console.error(error)
