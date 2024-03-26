@@ -3,23 +3,10 @@ import '@cardinal/namespaces-components/dist/esm/styles.css'
 import 'tailwindcss/tailwind.css'
 
 import { WalletIdentityProvider } from '@cardinal/namespaces-components'
+import type { WalletError } from '@solana/wallet-adapter-base';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
 import { WalletProvider } from '@solana/wallet-adapter-react'
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
-import {
-  BackpackWalletAdapter,
-  BraveWalletAdapter,
-  CoinbaseWalletAdapter,
-  ExodusWalletAdapter,
-  FractalWalletAdapter,
-  GlowWalletAdapter,
-  LedgerWalletAdapter,
-  MathWalletAdapter,
-  PhantomWalletAdapter,
-  SlopeWalletAdapter,
-  SolflareWalletAdapter,
-  TorusWalletAdapter,
-} from '@solana/wallet-adapter-wallets'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { ToastContainer } from 'common/Notification'
@@ -31,7 +18,7 @@ import {
 import { ModalProvider } from 'providers/ModalProvider'
 import { StakePoolMetadataProvider } from 'providers/StakePoolMetadataProvider'
 import { UTCNowProvider } from 'providers/UTCNowProvider'
-import { useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 
 require('@solana/wallet-adapter-react-ui/styles.css')
 
@@ -67,29 +54,16 @@ const App = ({
     }
   }, [cluster])
 
-  const wallets = useMemo(
-    () => [
-      new PhantomWalletAdapter(),
-      new BackpackWalletAdapter(),
-      new SolflareWalletAdapter({ network }),
-      new CoinbaseWalletAdapter(),
-      new BraveWalletAdapter(),
-      new SlopeWalletAdapter(),
-      new FractalWalletAdapter(),
-      new GlowWalletAdapter({ network }),
-      new ExodusWalletAdapter(),
-      new LedgerWalletAdapter(),
-      new MathWalletAdapter(),
-      new TorusWalletAdapter({ params: { network, showTorusButton: false } }),
-    ],
-    [network]
-  )
+  const wallets = useMemo(() => [], []);
+  const onError = useCallback((error: WalletError) => {
+    console.error(error);
+  }, []);
   return (
     <EnvironmentProvider defaultCluster={cluster}>
       <QueryClientProvider client={queryClient}>
         <StakePoolMetadataProvider hostname={hostname}>
           <UTCNowProvider>
-            <WalletProvider autoConnect wallets={wallets}>
+          <WalletProvider wallets={wallets} onError={onError} autoConnect={false}>
               <WalletIdentityProvider>
                 <WalletModalProvider>
                   <ModalProvider>
