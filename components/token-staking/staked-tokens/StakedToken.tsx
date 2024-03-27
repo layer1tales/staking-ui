@@ -10,12 +10,12 @@ import type { StakeEntryTokenData } from 'hooks/useStakedTokenDatas'
 import { useEnvironmentCtx } from 'providers/EnvironmentProvider'
 import { useStakePoolMetadataCtx } from 'providers/StakePoolMetadataProvider'
 
-import { TokenImage } from '@/components/token-staking/token/TokenImage'
-import { TokenImageWrapper } from '@/components/token-staking/token/TokenImageWrapper'
-import { TokenWrapper } from '@/components/token-staking/token/TokenWrapper'
 import { TokenStatBoostBadge } from '@/components/token-staking/token-stats/UI/TokenStatBoostBadge'
 import { TokenStatCooldownBadge } from '@/components/token-staking/token-stats/UI/TokenStatCooldownBadge'
 import { TokenStatNextRewardBadge } from '@/components/token-staking/token-stats/UI/TokenStatNextRewardBadge'
+import { TokenImage } from '@/components/token-staking/token/TokenImage'
+import { TokenImageWrapper } from '@/components/token-staking/token/TokenImageWrapper'
+import { TokenWrapper } from '@/components/token-staking/token/TokenWrapper'
 
 import { StakedStats } from './StakedStats'
 

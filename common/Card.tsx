@@ -10,7 +10,6 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   subHeader?: string | React.JSX.Element
   badges?: Badge[]
   hero?: JSX.Element
-  content?: string | undefined
   skeleton?: boolean
   className?: string
 }
