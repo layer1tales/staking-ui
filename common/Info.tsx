@@ -17,7 +17,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   colorized?: boolean
   header?: string
   description?: string
-  content?: React.JSX.Element | string
+  content?: string
   icon?: InfoIcon
 }
 export const Info: React.FC<Props> = ({
@@ -39,24 +39,6 @@ export const Info: React.FC<Props> = ({
           : '',
       }}
     >
-      {/* <div
-        className="blur-4xl absolute left-10 -z-10 h-[180px] w-[30%] -rotate-[60deg] bg-glow blur-[190px]"
-        css={
-          colorized &&
-          css`
-            background: ${config?.colors?.accent} !important;
-          `
-        }
-      />
-      <div
-        className="blur-4xl absolute right-40 -z-10 h-[180px] w-[20%] rotate-[60deg] bg-glow blur-[150px]"
-        css={
-          colorized &&
-          css`
-            background: ${config?.colors?.accent} !important;
-          `
-        }
-      /> */}
       <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
         <div>
           {icon &&
