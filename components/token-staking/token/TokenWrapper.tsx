@@ -1,14 +1,16 @@
 import classNames from 'classnames'
 import type { AllowedTokenData } from 'hooks/useAllowedTokenDatas'
+import type { StakeEntryTokenData } from 'hooks/useStakedTokenDatas'
 import { useStakePoolMetadataCtx } from 'providers/StakePoolMetadataProvider'
 
-type TokenDataType = unknown
+// Since TokenDataType is a union, the select function needs to handle both cases.
+type TokenDataType = AllowedTokenData | StakeEntryTokenData
 
-export interface TokenWrapperProps {
-  select: (tokenData: TokenDataType) => void
+interface TokenWrapperProps {
+  select: (tokenData: TokenDataType, amount?: string) => void
   selected: boolean
   children: React.ReactNode
-  token: AllowedTokenData
+  token: TokenDataType // Accepts both types.
 }
 
 export const TokenWrapper = ({
@@ -18,6 +20,21 @@ export const TokenWrapper = ({
   select,
 }: TokenWrapperProps) => {
   const { data: stakePoolMetadata } = useStakePoolMetadataCtx()
+
+  // Adjust the onClick to handle the complex nature of tokenData.
+  // Ensure that the function that uses TokenWrapper is prepared to handle both types.
+  const handleClick = () => {
+    if ('stakeEntry' in token) {
+      // This ensures you're dealing with StakeEntryTokenData.
+      select(token)
+    } else {
+      // Handle AllowedTokenData case or log an error/throw an exception if needed.
+      console.log(
+        "Token does not have 'stakeEntry', handling as AllowedTokenData",
+      )
+      select(token)
+    }
+  }
 
   return (
     <div
@@ -29,7 +46,7 @@ export const TokenWrapper = ({
           'border-gray-700': !selected,
         },
       ])}
-      onClick={() => select(token)}
+      onClick={handleClick} // Use handleClick to discern the type before calling select
       style={{
         borderColor: selected ? stakePoolMetadata?.colors?.secondary : '',
         boxShadow: selected
