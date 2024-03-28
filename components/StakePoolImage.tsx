@@ -12,6 +12,8 @@ export const StakePoolImage = ({ onClick }: { onClick?: () => void }) => {
         }`}
         src={config?.imageUrl}
         alt={config?.displayName}
+        width={600}
+        height={600}
       />
     </div>
   ) : (

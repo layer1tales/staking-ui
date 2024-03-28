@@ -13,6 +13,9 @@ const nextConfig = {
   sentry: {
     hideSourceMaps: true,
   },
+  images: {
+    domains: ['i.imgur.com'],
+  },
 }
 
 module.exports =
