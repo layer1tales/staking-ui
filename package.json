@@ -45,7 +45,7 @@
     "@metaplex-foundation/mpl-token-metadata": "^2.11.0",
     "@mui/material": "^5.15.14",
     "@popperjs/core": "^2.11.8",
-    "@sentry/nextjs": "^7.108.0",
+    "@sentry/nextjs": "^7.105.0",
     "@solana/buffer-layout": "^4.0.0",
     "@solana/spl-token": "^0.4.3",
     "@solana/wallet-adapter-react": "^0.15.35",
