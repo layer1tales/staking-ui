@@ -5,7 +5,7 @@ import { ReceiptType } from '@cardinal/staking/dist/cjs/programs/stakePool'
 import { BN } from '@coral-xyz/anchor'
 import { useWallet } from '@solana/wallet-adapter-react'
 import type { Signer, Transaction } from '@solana/web3.js'
-import { PublicKey, ComputeBudgetProgram, LAMPORTS_PER_SOL } from '@solana/web3.js'
+import { PublicKey } from '@solana/web3.js'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { notify } from 'common/Notification'
 import { parseMintNaturalAmountFromDecimal } from 'common/units'
@@ -70,16 +70,6 @@ export const useHandleStake = (callback?: () => void) => {
   const { data: stakePoolData } = useStakePoolData()
 
 
-  function modifyTransaction(tx: Transaction): Transaction {
-    // Example: Add a compute budget instruction to increase the fee indirectly
-    const PRIORITY_RATE = 100; // MICRO_LAMPORTS 
-    const SEND_AMT = 0.01 * LAMPORTS_PER_SOL;
-    const PRIORITY_FEE_IX = ComputeBudgetProgram.setComputeUnitPrice({microLamports: PRIORITY_RATE}); 
-    tx.add(PRIORITY_FEE_IX);
-    
-    return tx;
-  }
-
   return useMutation(
     async ({
       tokenDatas,
@@ -117,14 +107,6 @@ export const useHandleStake = (callback?: () => void) => {
           ).map((tx) => ({ tx })),
         ]
       }
-
-      txs = txs.map(sequence => 
-        sequence.map(({ tx, signers }) => ({
-          tx: modifyTransaction(tx), // Apply the modification
-          signers // Keep the signers as is
-        }))
-      );
-
 
       
       return executeTransactionSequence(connection, txs, wallet, {
