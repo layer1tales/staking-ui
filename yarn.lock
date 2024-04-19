@@ -850,20 +850,20 @@
     bs58 "^5.0.0"
     uuid "^8.3.2"
 
-"@l1t/configs@^1.3.7":
-  version "1.3.7"
-  resolved "https://registry.npmjs.org/@l1t/configs/-/configs-1.3.7.tgz"
-  integrity sha512-PFwkfokMAs7wJrXCxxM8JaHoVmqjCImR5DVrwvlp6kJ3VEu5LAdLkQQPVhjtNNgwbHCjHAka7GVNLILP6eM+RA==
+"@l1t/configs@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@l1t/configs/-/configs-1.4.4.tgz#22d812cb8dccc83fe6e2acf2099d29b5b8ed080d"
+  integrity sha512-fqEMXzMfZgIV6zg8asdLMjMRIWJshsWlDs39z4vqTA8nlaTyal2gbrCMlFtLdz71cYgiyUtkC3n0CgjYo9G8jg==
   dependencies:
     "@cardinal/common" "^5.0.2"
     "@project-serum/anchor" "^0.25.0"
     "@solana/web3.js" "^1.66.2"
     dotenv "^16.0.3"
 
-"@l1t/rewards-center@^3.8.3":
-  version "3.8.3"
-  resolved "https://registry.npmjs.org/@l1t/rewards-center/-/rewards-center-3.8.3.tgz"
-  integrity sha512-RPIaJ98z7LiZz8AMrJx2QgxdJV4lxJIBaSQw9UFtTe72HSkqDzHbfss94BM3FyJ1Qvk/QO5lvPvFQceTgR4oJA==
+"@l1t/rewards-center@^3.8.7":
+  version "3.8.7"
+  resolved "https://registry.yarnpkg.com/@l1t/rewards-center/-/rewards-center-3.8.7.tgz#728b511d76761065976b98a374f191ba0788d710"
+  integrity sha512-aO+o7ffhIfbUVt+pGRRSxwveKAYttMhKTwtlwZ5+brKi4OuaDHTzP6o+qAqjkOvtlCS4HyplTXtWt/qvagDunA==
   dependencies:
     "@cardinal/common" "^8.0.0"
     "@cardinal/creator-standard" "^2.4.0"
@@ -3985,7 +3985,7 @@ dot-case@^3.0.4:
 
 dotenv@^16.0.3:
   version "16.4.5"
-  resolved "https://registry.npmjs.org/dotenv/-/dotenv-16.4.5.tgz"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.4.5.tgz#cdd3b3b604cb327e286b4762e13502f717cb099f"
   integrity sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==
 
 drbg.js@^1.0.1:
