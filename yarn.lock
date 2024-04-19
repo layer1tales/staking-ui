@@ -266,7 +266,7 @@
 
 "@cardinal/common@^8.0.0":
   version "8.0.0"
-  resolved "https://registry.npmjs.org/@cardinal/common/-/common-8.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/@cardinal/common/-/common-8.0.0.tgz#716c1f6f944c7521b7750cbd4211fca2c68830d5"
   integrity sha512-kgjPoD7owZ0vyX0vJ0oSOgyJCx/yzCek+w5gjPVFZxFtLWwxssBAbd1NnZ6qIq0er8S0wFsLZnBRNh32drprEw==
   dependencies:
     "@coral-xyz/anchor" "^0.27.0"
@@ -860,10 +860,10 @@
     "@solana/web3.js" "^1.66.2"
     dotenv "^16.0.3"
 
-"@l1t/rewards-center@^3.8.7":
-  version "3.8.7"
-  resolved "https://registry.yarnpkg.com/@l1t/rewards-center/-/rewards-center-3.8.7.tgz#728b511d76761065976b98a374f191ba0788d710"
-  integrity sha512-aO+o7ffhIfbUVt+pGRRSxwveKAYttMhKTwtlwZ5+brKi4OuaDHTzP6o+qAqjkOvtlCS4HyplTXtWt/qvagDunA==
+"@l1t/rewards-center@^3.8.8":
+  version "3.8.8"
+  resolved "https://registry.yarnpkg.com/@l1t/rewards-center/-/rewards-center-3.8.8.tgz#1385fc33f9c2de52ca5d0588d6e7c8387d6d4e03"
+  integrity sha512-N1tPfmE1HuTwNtH/ppE1a8jXZwR6GLZoHLBGjQGDUPKIdozE+daGH0dKD/6A/UGBs9J33BNlPkcBqLNHm4Ws0w==
   dependencies:
     "@cardinal/common" "^8.0.0"
     "@cardinal/creator-standard" "^2.4.0"
