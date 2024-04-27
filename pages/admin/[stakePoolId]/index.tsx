@@ -18,9 +18,9 @@ function Home() {
     <div className="flex min-h-screen flex-col">
       <Head>
         <title>{`${
-          config ? config.displayName : 'OpenCardinal'
+          config ? config.displayName : 'L1T'
         } NFT Staking`}</title>
-        <meta name="description" content="OpenCardinal NFT Staking" />
+        <meta name="description" content="L1T NFT Staking" />
         <link rel="icon" href={config ? config.imageUrl : `/favicon.ico`} />
         {/* <script
           defer

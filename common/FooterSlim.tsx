@@ -25,7 +25,7 @@ export const FooterSlim = () => {
             Documentation
           </a> */}
           <a
-            href="https://github.com/opencardinal"
+            href="https://github.com/layer1tales"
             target="_blank"
             rel="noreferrer"
             className="cursor-pointer transition-colors hover:text-primary"

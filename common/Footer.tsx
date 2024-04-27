@@ -53,7 +53,7 @@ export const Footer = ({
             {/* <a href="https://docs.cardinal.so/" className="text-gray-400">
               Documentation
             </a> */}
-            <a href="https://github.com/opencardinal" className="text-gray-400">
+            <a href="https://github.com/layer1tales" className="text-gray-400">
               Github
             </a>
             {/* <a href="mailto:team@cardinal.so" className="text-gray-400">

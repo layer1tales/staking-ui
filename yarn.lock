@@ -850,7 +850,7 @@
     bs58 "^5.0.0"
     uuid "^8.3.2"
 
-"@l1t/configs@^1.4.4":
+"@l1t/configs@^1.3.7":
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/@l1t/configs/-/configs-1.4.4.tgz#22d812cb8dccc83fe6e2acf2099d29b5b8ed080d"
   integrity sha512-fqEMXzMfZgIV6zg8asdLMjMRIWJshsWlDs39z4vqTA8nlaTyal2gbrCMlFtLdz71cYgiyUtkC3n0CgjYo9G8jg==
